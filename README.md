@@ -1,5 +1,5 @@
 # rankhistogram
-Python function that takes model data, obs data, and a boolean mask to generate a rank histogram. Ranks overwhich values are tied (often occurs for rainfall of 0mm for example) are asigned a random rank.
+Python function that takes model data, obs data, and a boolean mask to generate a rank histogram. Ranks overwhich values are tied (often occurs for rainfall of 0mm for example) are asigned a random rank. The original 2001 paper by Thomas Hamil lthat describes rank histograms is [here](http://journals.ametsoc.org/doi/pdf/10.1175/1520-0493%282001%29129%3C0550%3AIORHFV%3E2.0.CO%3B2).
 
 ### Example
 ```
