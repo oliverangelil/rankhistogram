@@ -6,7 +6,7 @@ setup(
     version='0.1',
     url='https://github.com/oliverangelil/rankhistogram',
     install_requires=['numpy','scipy'],
-    author='Oliver Marc Angélil',
+    author='Oliver Marc Angelil',
     author_email='molofishy@gmail.com',
     py_modules=['ranky'],
     license='MIT',
