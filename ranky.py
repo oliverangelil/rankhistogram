@@ -20,23 +20,22 @@ def rankz(obs,ensemble,mask):
 
     mask=np.bool_(mask)
 
-    print 'masking observations and ensemble'
     obs=obs[mask]
     ensemble=ensemble[:,mask]
     
     combined=np.vstack((obs[np.newaxis],ensemble))
 
-    print 'computing ranks'
+    # print('computing ranks')
     ranks=np.apply_along_axis(lambda x: rankdata(x,method='min'),0,combined)
 
-    print 'computing ties'
+    # print('computing ties')
     ties=np.sum(ranks[0]==ranks[1:], axis=0)
     ranks=ranks[0]
     tie=np.unique(ties)
 
     for i in range(1,len(tie)):
         index=ranks[ties==tie[i]]
-        print 'randomizing tied ranks for ' + str(len(index)) + ' instances where there is ' + str(tie[i]) + ' tie/s. ' + str(len(tie)-i-1) + ' more to go'
+        # print('randomizing tied ranks for ' + str(len(index)) + ' instances where there is ' + str(tie[i]) + ' tie/s. ' + str(len(tie)-i-1) + ' more to go')
         ranks[ties==tie[i]]=[np.random.randint(index[j],index[j]+tie[i]+1,tie[i])[0] for j in range(len(index))]
     print '-------------done------------'         
     return np.histogram(ranks, bins=np.linspace(0.5, combined.shape[0]+0.5, combined.shape[0]+1))

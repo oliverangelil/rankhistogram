@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='rankhistogram',
+    name='rank-histogram',
     description='Python function that takes model data, obs data, and a boolean mask to generate a rank histogram.',
     version='0.1',
     url='https://github.com/oliverangelil/rankhistogram',
