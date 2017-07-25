@@ -5,6 +5,7 @@ Python function that takes model data, obs data, and a boolean mask to generate 
 ```
 import numpy as np
 from ranky import rankz
+import matplotlib.pyplot as plt
 
 # generate dummy data with 10 timesteps, 40 lat and lon grid cells, and 20 ensemble members. 
 obs = np.random.randn(10, 40, 40)
